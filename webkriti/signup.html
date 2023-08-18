@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const form = document.getElementById('form');
+
+          form.addEventListener('submit', function (event) {
+              event.preventDefault(); // Prevent the default form submission
+
+              const email = document.getElementById('email').value;
+              const password = document.getElementById('password').value;
+
+              if (!email || !password) {
+                  alert('Please fill in all fields.');
+                  return;
+              }
+
+              if (password.length < 8) {
+                  alert('Password must be at least 8 characters long.');
+                  return;
+              }
+
+              // Redirect to the home page after successful validation
+              redirectToHomePage();
+          });
+      });
+
+      function redirectToHomePage() {
+          window.location.href = './home.html';
+      }
+  </script>
+    <link rel="stylesheet" href="signup.css">
+  </head>
+  <body>
+    <section class="one">
+
+      <form class="form" id="form">
+        <p class="form-title">Sign in to your account</p>
+         <div class="input-container">
+           <input type="email" id="email" name="email" required type="email" placeholder="Enter your email">
+           <span>
+           </span>
+       </div>
+       <div class="input-container">
+           <input type="password" id="password" name="password" placeholder="Enter your password"  required minlength="8" maxlength="20">
+         </div>
+          <button type="submit"  class="submit" id="submit">
+         Sign in
+       </button>
+ 
+       <p class="signup-link">
+         No account?
+         <a href="" >Sign up</a>
+       </p>
+    </form>
+ 
+    </section>
+  </body>
+</html>
