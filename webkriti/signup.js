@@ -13,6 +13,7 @@ const db = mongoose.connection;
 db.once('open', () => {
   console.log('Connected to MongoDB');
 });
+app.use(express.static('hc'));
 
 // Define a User schema
 const userSchema = new mongoose.Schema({
@@ -35,15 +36,13 @@ app.post('/login', async (req, res) => {
   const user = await User.findOne({ email, password });
   
   if (user) {
-    res.redirect('/hc/home.html');
+    res.sendFile(__dirname + '/hc/home.html');
   } else {
-    res.send('Invalid email or password. Please try again.');
+    res.redirect('/login?error=' + encodeURIComponent('Invalid email or password. Please try again.'));
+
   }
 });
 
-app.get('/hc/home.html', (req, res) => {
-  res.send('Welcome to the home page!');
-});
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000');

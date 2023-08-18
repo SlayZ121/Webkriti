@@ -30,5 +30,13 @@
     </form>
  
     </section>
+    <script>
+      const queryParams = new URLSearchParams(window.location.search);
+      const errorMessage = queryParams.get('error');
+  
+      if (errorMessage) {
+        alert(errorMessage);
+      }
+    </script>
   </body>
 </html>
