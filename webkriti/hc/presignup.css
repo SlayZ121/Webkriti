@@ -1,0 +1,122 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color and font styles */
+body {
+    font-family: Akzidenz-Grotesk Std;
+    background-image: url("https://cdn.dribbble.com/users/162444/screenshots/2275266/shot_lg.jpg");
+    
+    
+    
+    background-size:cover;
+    background-repeat:none;
+    height:100vh;
+    z-index: 5;
+}
+
+.capel-text {
+    font-family: 'Allura', cursive;
+    font-size:3.2rem;
+}
+
+/* Header styles */
+.homepg-header {
+    background-color: #07072D;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.homepg-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.auth-buttons {
+    display: flex;
+}
+
+.textm {
+    font-family: 'Allura', cursive;
+    font-size: 2.5rem;
+}
+
+.auth-button {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 8px 16px;
+    background-color: #2f0eeb;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.auth-button:hover {
+    background-color: #fff;
+    color: #2f0eeb;
+}
+
+h3 {
+    font-family: 'Allura', cursive;
+    font-size: 2.5rem;
+    color: #B76E79;
+}
+
+/* Hero section styles */
+.hero {
+    text-align: center;
+    padding:100px 0;
+    
+        margin-bottom: 0; /* Remove margin from the hero section */
+    
+     /* Add margin to create space between hero and footer */
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2f0eeb;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 20px; /* Add margin-top for spacing */
+}
+
+/* Footer styles */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+}
