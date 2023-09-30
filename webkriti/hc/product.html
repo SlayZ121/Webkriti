@@ -4,29 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
 </head>
 <body>
-    <!-- Header content here -->
-
-    <div class="product-grid">
-        <!-- Product Cards -->
-        <div class="product-card">
-            <div class="product-img">
-                <img src="http://bit.ly/2tMBBTd" alt="Product Image">
-            </div>
-            <div class="product-info">
-                <h3>Product Name</h3>
-                <p>Product description goes here.</p>
-                <div class="product-price">
-                    <span>$78</span>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
+    <header>
+        <div class="navbar">
+            <a href="/home">Home</a>
+            <a href="/cart">Add to cart</a>            
+            <a href="/favorite">Favorites</a>
+            <a href="#contact">Contact Us</a>
         </div>
-        <!-- Repeat more product cards here -->
+       
+    </header>
+    <div class="spinner-container">
+        <div class="spinner">
+            <div class="spinner1"></div>
+        </div>
     </div>
-
-    <!-- Footer content here -->
+   
+   
+       
+    <script>
+        window.addEventListener('load', function () {
+            const spinnerContainer = document.querySelector('.spinner-container');
+            setTimeout(function() {
+                spinnerContainer.style.display = 'none';
+                window.scrollTo(0, 0);
+            }, 900); 
+        });
+    </script>
+    
+      
 
 </body>
 </html>

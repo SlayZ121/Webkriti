@@ -49,45 +49,22 @@
     </div>
 
     <script>
-        
-        const electronicsData = [
-        { name: 'Alexa', description: 'Cloud based AI voice', price:'$99.99',url:'https://cdn.vox-cdn.com/thumbor/q6F-0R0T4fyPBdzF7EDLuopsPU8=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/19734956/GettyImages_1154848776.jpg'},
-           {name:'iphone14 Pro',price:'$999',description:'Super Retina XDR display 48MP camera', url:'https://cdn.dxomark.com/wp-content/uploads/medias/post-125428/Apple-iPhone-14-Pro-Max_FINAL_featured-image-packshot-review-1-1024x691.jpg'},
-           {name:'Nintendo Switch OLED',description:'Tears of the Kingdom Edition Console',url:'https://m.media-amazon.com/images/I/81Yiw8Zk0uL._SL1500_.jpg',price:'$539'},
-           {name:'PS5',description:'Video Game Console',url:'https://upload.wikimedia.org/wikipedia/commons/7/77/Black_and_white_Playstation_5_base_edition_with_controller.png',price:'$499'},
-           {name:'OPPO Reno8',description:'5G smartphone with dual sim',url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShI606ipNHYcYZnn7rkIM7pDodCDqCt3Psw1NUFAOY3j6WjCDOw_BepwtMGtv6Dl3x5dc&usqp=CAU',price:'$399'},
-           {name:'boAt Airdopes148',description:'Wireless Earbuds',url:'https://media.croma.com/image/upload/v1664429797/Croma%20Assets/Communication/Headphones%20and%20Earphones/Images/247655_0_ixj0ae.png',price:'$54'},
-           {name:'LG refrigerator',description:'205 Ltr 4 Star fridge',url:'https://www.lg.com/in/images/refrigerators/md06235496/gallery/GL-D221ABCY-Refrigerators-Front-View-D-01-VF.jpg',price:'$253'},
-           {name:'Samsung GalaxyA54',description:'5G 8GB RAM',url:'https://www-konga-com-res.cloudinary.com/w_400,f_auto,fl_lossy,dpr_3.0,q_auto/media/catalog/product/P/Y/3553_1679583763.jpg',price:'$499'}
-           
-        ];
-        
+       function fetchDataFromAPI(category, containerId) {
+    fetch(`/products?category=${category}`)  // Include the category in the request URL
+        .then((response) => response.json())
+        .then((data) => {
+            generateFlipCards(data, containerId);
+        })
+        .catch((error) => {
+            console.error('Error fetching data:', error);
+        });
+}
 
-        const fashionData = [
-            { name: 'Product 1', description: 'Description 1', url: 'fashion-image-url' },
-           
-        ];
 
-        const artsCraftsData = [
-            { name: 'Product 1', description: 'Description 1', url: 'arts-crafts-image-url' },
-           
-        ];
-
-        const householdData = [
-            { name: 'Product 1', description: 'Description 1', url: 'household-image-url' },
-           
-        ];
-
-        const petSuppliesData = [
-            { name: 'Product 1', description: 'Description 1', url: 'pet-supplies-image-url' },
-            // Add more products for Pet Supplies
-        ];
-
-        // Function to generate flip cards for a category
-        function generateFlipCards(categoryData, containerId) {
+        function generateFlipCards(data, containerId) {
             const container = document.getElementById(containerId);
 
-            categoryData.forEach(product => {
+            data.forEach((product) => {
                 const flipCard = document.createElement('div');
                 flipCard.classList.add('flip-card');
 
@@ -107,24 +84,22 @@
             });
         }
 
-        // Call the function for each category
-        generateFlipCards(electronicsData, 'electronics-cards');
-        generateFlipCards(fashionData, 'fashion-cards');
-        generateFlipCards(artsCraftsData, 'arts-crafts-cards');
-        generateFlipCards(householdData, 'household-cards');
-        generateFlipCards(petSuppliesData, 'pet-supplies-cards');
-    </script>
-    <script>
+        window.addEventListener('load', function () {
+            fetchDataFromAPI('electronics', 'electronics-cards');
+            fetchDataFromAPI('fashion', 'fashion-cards');
+            fetchDataFromAPI('homeappliances','household-cards');
+            fetchDataFromAPI('pet','pet-supplies-cards');
+            fetchDataFromAPI('arts','arts-crafts-cards');
+
+        });
+
         window.addEventListener('load', function () {
             const spinnerContainer = document.querySelector('.spinner-container');
-            setTimeout(function() {
+            setTimeout(function () {
                 spinnerContainer.style.display = 'none';
                 window.scrollTo(0, 0);
-            }, 900); 
+            }, 900);
         });
     </script>
-    
-      
-
 </body>
 </html>
