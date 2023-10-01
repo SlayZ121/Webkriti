@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    
     
 </head>
 <body>
+    
     <header>
         <div class="navbar">
             <a href="#home">Home</a>
-            <a href="#cart">Add to cart</a>            
+            <a href="/cart">Add to cart</a>            
             <a href="#Favorites">Favorites</a>
             <a href="#contact">Contact Us</a>
         </div>
@@ -72,12 +73,15 @@
                     <div class="flip-card-inner">
                         <div class="flip-card-front" style="background-image: url('${product.url}')"></div>
                         <div class="flip-card-back">
-                            <p class="title">${product.name}</p>
+                            <p class="title product-name">${product.name}</p>
                             <p>${product.description}</p>
-                            <p>${product.price}</p>
+                            <p class="product-price">${product.price}</p>
+                            <div class="flip-card-button-container">
+        <button class="add-to-cart-button">Add to Cart</button>
+    </div>
                         </div>
                     </div>
-                `;
+                    `;
 
                 flipCard.innerHTML = innerHTML;
                 container.appendChild(flipCard);
@@ -100,6 +104,44 @@
                 window.scrollTo(0, 0);
             }, 900);
         });
+
+        function addToCart(productName, productPrice) {
+         
+            const productDetails = {
+                name: productName,
+                price: productPrice,
+                quantity: 1,
+            };
+
+           
+            fetch('/add-to-cart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(productDetails),
+            })
+            .then((response) => response.text())
+            .then((message) => {
+             
+                console.log(message);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+        }
+
+      
+        document.querySelectorAll('.add-to-cart-button').forEach((button) => {
+            button.addEventListener('click', function () {
+                console.log('Button clicked'); 
+                const productName = this.closest('.flip-card').querySelector('.product-name').textContent;
+                const productPrice = this.closest('.flip-card').querySelector('.product-price').textContent;
+
+                addToCart(productName, productPrice);
+            });
+        });
+
     </script>
 </body>
 </html>

@@ -36,10 +36,10 @@ const Product = mongoose.model('Product', productSchema);
 app.use(express.static('hc'));
 app.get('/products', async (req, res) => {
   try {
-      const category = req.query.category;  // Get the category from the query parameter
-      const filter = category ? { category } : {};  // Create a filter based on the category (if provided)
+      const category = req.query.category; 
+      const filter = category ? { category } : {};  
       const products = await Product.find(filter);
-      console.log('Products:', products); // Log the retrieved products
+      console.log('Products:', products);
       res.json(products);
   } catch (error) {
       console.error(error);
@@ -57,7 +57,7 @@ app.get('/cart', (req, res) => {
   res.sendFile(__dirname + '/hc/cart.js');
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
