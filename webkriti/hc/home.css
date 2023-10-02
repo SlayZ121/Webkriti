@@ -1,138 +1,234 @@
 .navbar {
-    overflow: hidden;
-    background-color: #333;
-    position: fixed; 
-    top: 0; 
-    width: 100%; 
-    z-index:1000;
-  }
-  
-  
-  .navbar a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
+  z-index:1000;
+}
 
-  .navbar a:hover {
-    background: #ddd;
-    color: black;
-  }
-  
- 
-  .main {
-    margin-top: 30px; 
-  }
-  body {
-    background: linear-gradient(to bottom, #f0f8ff, #e6f7ff);
-    background-size:cover;
-    background-repeat:none;
-    margin:0;
-    height:100vw;
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.top {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  --s: 10px;
+  padding: 10px;
+  background: conic-gradient(from 90deg at 1px 1px, #0000 25%, #000 0);
+  text-align: center;
+  font-size: 1.5rem;
+  width: fit-content; /* Set the width to fit the content */
+  margin: 0 auto; /* Center horizontally */
+  border: calc(2 * var(--s)) solid #0000;
+  outline: 1px solid #000;
+  outline-offset: calc(-1 * var(--s));
+  margin-top: 2rem;
+}
+.nah{
+margin-top: 4rem;
+}
+
+.established {
+font-style: italic;
+text-align:center;
+font-size:1.5rem;
+}
+.topp {
+padding: 1rem;
+display: inline-block;
+border: 3px solid #333333;
+font-size:1rem;
+border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+text-transform: uppercase;
+letter-spacing: 0.3ch;
+background: #ffffff;
+position: relative;
+margin-left: 2rem;
+
+&::before {
+    content: '';
+    border: 2px solid #353535;
+    display: block;
     
-    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width:100%;
+    height:100%;
+    transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+    border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+}
+}
+
+.h11{
+font-family: 'Tangerine', cursive;
+
+text-align: center;
+font-size: 10rem;
+}
+.main {
+  margin-top: 30px; 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background:#fffaee;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  height: 100%; 
+  width: 100%;
+  z-index:1;
+}
+.looks {
+background: url("https://static.vecteezy.com/system/resources/previews/002/317/766/original/pink-luxury-rose-gold-gradient-background-free-vector.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  height: 100%; 
+  width: 100%; /* Adjust the width as needed */
+  margin: 0 auto;
+  z-index: 2;
+text-align: center; /* Center horizontally */
+display: flex;
+justify-content: center; /* Center horizontally */
+align-items: center; /* Center vertically */
+height: 50vh; /* This helps to center vertically */
+padding:0;
+padding-bottom:3rem !important;
 }
 .spinner {
-    background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
-    width: 100px;
-    height: 100px;
-    animation: spinning82341 1.7s linear infinite;
-    text-align: center;
-    border-radius: 50px;
-    filter: blur(1px);
-    box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+  background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
+  width: 100px;
+  height: 100px;
+  animation: spinning82341 1.7s linear infinite;
+  text-align: center;
+  border-radius: 50px;
+  filter: blur(1px);
+  box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+}
+
+.spinner1 {
+  background-color: rgb(36, 36, 36);
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  filter: blur(10px);
+}
+
+@keyframes spinning82341 {
+  to {
+    transform: rotate(360deg);
   }
-  
-  .spinner1 {
-    background-color: rgb(36, 36, 36);
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    filter: blur(10px);
-  }
-  
-  @keyframes spinning82341 {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  .spinner1 {
-   
-    animation: spinning82341 1.7s linear infinite;
-  }
-  .spinner-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
-    z-index: 9999; /* Ensure the loader is on top */
+}
+.spinner1 {
+ 
+  animation: spinning82341 1.7s linear infinite;
+}
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 9999; /* Ensure the loader is on top */
 }
 
 
 .flip-card {
-  background-color: transparent;
-  width: 190px;
-  height: 254px;
-  perspective: 1000px;
-  font-family: sans-serif;
-  margin-top:70px !important;
-  margin: 60px;
+ 
+background-color: transparent;
+width: 190px;
+height: 254px;
+perspective: 1000px;
+font-family: sans-serif;
+margin-top:70px !important;
+margin: 60px;
+
 }
 
 .title {
-  font-size: 1.1em;
-  font-weight: 900;
-  text-align: center;
-  margin: 0;
+font-size: 1.1em;
+font-weight: 900;
+text-align: center;
+margin: 0;
 }
 
 .flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+  border-radius: 1rem!important;
+}
+.flip-card-inner {
+position: relative;
+width: 100%;
+height: 100%;
+text-align: center;
+transition: transform 0.8s;
+transform-style: preserve-3d;
+border-radius:1rem;
 }
 
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+transform: rotateY(180deg);
 }
 
 .flip-card-front, .flip-card-back {
-  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  
+box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+position: absolute;
+display: flex;
+flex-direction: column;
+justify-content: center;
+width: 100%;
+height: 100%;
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+border-radius: 1rem;
+  overflow: hidden; 
+  border: 5px solid transparent; /* Transparent border for the pink and gold border */
+  border-image: linear-gradient(45deg, pink, gold); /* Pink and gold linear gradient border */
+  border-image-slice: 1;
   border-radius: 1rem;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.flip-card::before {
+  transform: translate(-5px, -5px);
+}
+
+.flip-card::after {
+  transform: translate(5px, 5px);
 }
 
 .flip-card-front {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+
 }
 
 .flip-card-back {
-  background: white;
-  color: black;
-  transform: rotateY(180deg);
+  background-color: #fffaee;
+color: black;
+transform: rotateY(180deg);
 }
 .flip-card-container{
 display: flex;
@@ -140,23 +236,48 @@ flex-wrap: wrap;
 justify-content: center;
 }
 .flip-card-button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px; 
+display: flex;
+justify-content: center;
+align-items: center;
+height: 40px; 
 }
 
 
 .add-to-cart-button {
-  background-color: #007bff; 
-  color: #fff; 
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px; 
-  cursor: pointer;
-  transition: background-color 0.3s ease; 
+background-color: #007bff; 
+color: #fff; 
+border: none;
+border-radius: 4px;
+padding: 8px 16px; 
+cursor: pointer;
+transition: background-color 0.3s ease; 
 
 }
 .add-to-cart-button:hover {
-  background-color: #0056b3;
+background-color: #0056b3;
+}
+
+.footer {
+background-color: #333;
+color: #fff;
+padding: 20px;
+text-align: center;
+}
+
+.footer-section {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+margin: 0 20px; /* Add margin to the left and right sides */
+}
+
+.branch,
+.trade,
+#contact {
+display: inline-block;
+text-align: left;
+padding: 0 10px; /* Reduce padding between div elements */
+}
+.product-detail{
+  display:none;
 }

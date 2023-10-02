@@ -5,38 +5,310 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="product.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
-    
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
+    
     <header>
         <div class="navbar">
-            <a href="/home">Home</a>
-            <a href="/cart">Add to cart</a>            
-            <a href="/favorite">Favorites</a>
+            <a href="#home">Home</a>
+            <a href="/cart">Cart</a>            
+            <a href="#Favorites">Categories</a>
             <a href="#contact">Contact Us</a>
         </div>
        
     </header>
-    <div class="spinner-container">
-        <div class="spinner">
-            <div class="spinner1"></div>
+
+   
+    <main>
+        <div class="product-details">
+            <div class="product-image">
+                <img id="product-image" src="" alt="Product Image">
+            </div>
+            <div class="product-info">
+                <h1 id="product-name"></h1>
+                <p id="product-description" style="font-size:1.1rem"></p>
+               <b> <p style="font-size:1.2rem">About</p></b>
+             
+                <p id="product-detail"></p>
+                <b> <p style="font-size:1.2rem">Price</p></b>
+                <p id="product-price"></p>
+                <b> <p style="color:green">In Stock</p></b>
+               
+         <br>
+         <br>
+        
+        
+        <div class="btn">
+            <button class="add-to-cart-button" onclick="addToCartBackend(this)">Add to Cart<div class="star-1">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+              </div>
+              <div class="star-2">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+              </div>
+              <div class="star-3">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+              </div>
+              <div class="star-4">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+              </div>
+              <div class="star-5">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+              </div>
+              <div class="star-6">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+              </div></button>
+            <button id="buy-now-button">Buy Now<div class="star-1">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+              </div>
+              <div class="star-2">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+              </div>
+              <div class="star-3">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+              </div>
+              <div class="star-4">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+              </div>
+              <div class="star-5">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+              </div>
+              <div class="star-6">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+              </div></button>
         </div>
     </div>
+    </div>
+   <hr class="rounded">
+
+    <h2 class="rev">Customer Review section</h2>
+    <div class="customer-reviews">
+        
+        
+        
+            
+               
+        <div class="form-container">
+            <form class="form">
+              <div class="form-group">
+                <div class="stars">
+                <label for="email">Name</label>
+                <input type="text" id="email" name="email" required="">
+              </div>
+              <div class="star-rating">
+                <label for="rating">Rating:</label>
+                <span class="star" data-rating="1">⭐</span>
+                <span class="star" data-rating="2">⭐</span>
+                <span class="star" data-rating="3">⭐</span>
+                <span class="star" data-rating="4">⭐</span>
+                <span class="star" data-rating="5">⭐</span>
+                <input type="hidden" name="rating" id="rating" required>
+            </div>
+            </div>
+              <div class="form-group">
+                <label for="textarea">Write your review below!</label>
+                <textarea name="textarea" id="textarea" rows="10" cols="50" required="">          </textarea>
+              </div>
+              <button class="form-submit-btn" type="submit">Submit</button>
+            </form>
+          </div>
+
+
+
    
-   
-       
-    <script>
-        window.addEventListener('load', function () {
-            const spinnerContainer = document.querySelector('.spinner-container');
-            setTimeout(function() {
-                spinnerContainer.style.display = 'none';
-                window.scrollTo(0, 0);
-            }, 900); 
-        });
-    </script>
+    <h2>Read Others' Reviews</h2>
+    <div id="reviews-list">
+        <div class="customer-review">
+            <div class="customer-info">
+                <p><strong>Zoey Hansy</strong></p>
+                <p>⭐⭐⭐⭐⭐</p>
+            </div>
+            <div class="customer-comment">
+                <p>This product is amazing! It exceeded my expectations...</p>
+            </div>
+        </div>
     
+        <div class="customer-review">
+            <div class="customer-info">
+                <p><strong>Vinay Cheripally</strong></p>
+                <p>⭐⭐⭐⭐</p>
+            </div>
+            <div class="customer-comment">
+                <p>Good value for money, but there's room for improvement...</p>
+            </div>
+        </div>
+        <!-- Existing customer reviews will be appended here -->
+    </div>
+</div>
+    </main>
+   
+    <footer class="footer">
+        <div class="footer-section">
+       <div class="branch">
+        <h3 >Branches</h3>
+        <p>India</p>
+        <p> Singapore</p>
+        <p>Sweden</p>
+        <p>Ireland</p>
+       </div>
+       <div class="trade">
+        <h3 >Trade Partners</h3>
+        <p>Vinay Cheripally</p>
+        <p>Zoey</p>
+       </div>
+       <div id="contact">
+       <h3 >Contact us</h3>
+       <p>winkelco@gmail.com</p>
+       </div>
+       </div>
+       <p>&copy; 2023 Winkel. All rights reserved.</p>
+    </footer>
+    
+
+
+   
+    <script>
+     
+
+     function addToCartBackend(button) {
+            console.log("clicked");
+            const productName = button.closest('.product-info').querySelector('.product-name').textContent;
+            const productPrice = button.closest('.product-info').querySelector('.product-price').textContent;
+
+            addToCart(productName, productPrice);
+        }
+
+        
+function showmsg(){
+    alert("Added to cart!");
+}
       
 
+        function addToCart(productName, productPrice) {
+         
+         const productDetails = {
+             name: productName,
+             price: productPrice,
+             quantity: 1,
+         };
+           
+            fetch('http://localhost:3000/add-to-cart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(productDetails),
+            })
+            .then((response) => response.text())
+            .then((message) => {
+             
+                console.log(message);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+            showmsg();
+        }
+
+      
+        window.addEventListener('DOMContentLoaded', function () {
+            const queryParams = new URLSearchParams(window.location.search);
+            const productName = queryParams.get('name');
+            const productDescription = queryParams.get('description');
+            const productPrice = queryParams.get('price');
+            const productImageUrl = queryParams.get('imageUrl');
+            const productDetail=queryParams.get('detail')
+
+           
+            const productNameElement = document.getElementById('product-name');
+            const productDescriptionElement = document.getElementById('product-description');
+            const productPriceElement = document.getElementById('product-price');
+            const productImageElement = document.getElementById('product-image');
+            const productDetailElement = document.getElementById('product-detail');
+
+            productNameElement.textContent = productName;
+            productDescriptionElement.textContent = productDescription;
+            productPriceElement.textContent = productPrice;
+            productImageElement.src = productImageUrl;
+            productDetailElement.textContent = productDetail;
+        });
+
+        
+
+      function buynow(button){
+        const productName = button.closest('.product-info').querySelector('.product-name').textContent;
+            const productPrice = button.closest('.product-info').querySelector('.product-price').textContent;
+
+
+       }
+
+       function handleStarRating() {
+        const stars = document.querySelectorAll('.star');
+        const ratingInput = document.getElementById('rating');
+
+        stars.forEach((star) => {
+            star.addEventListener('click', () => {
+                const rating = parseInt(star.getAttribute('data-rating'));
+                ratingInput.value = rating;
+
+                stars.forEach((s) => {
+                    const sRating = parseInt(s.getAttribute('data-rating'));
+                    if (sRating <= rating) {
+                        s.textContent = '⭐'; // Fill the star
+                    } else {
+                        s.textContent = '☆'; // Unfill the star
+                    }
+                });
+            });
+        });
+    }
+
+    // Call the handleStarRating function to set up star rating interaction
+    handleStarRating();
+
+    function addReview(name, rating, comment) {
+        const reviewsList = document.getElementById('reviews-list');
+
+        const reviewElement = document.createElement('div');
+        reviewElement.classList.add('customer-review');
+        const starRating = '⭐'.repeat(rating);
+
+
+ reviewElement.innerHTML = `
+    <div class="customer-info">
+        <p><strong>${name}</strong></p>
+        <p>${starRating}</p>
+    </div>
+    <div class="customer-comment">
+        <p>${comment}</p>
+    </div>
+`;
+        reviewsList.appendChild(reviewElement);
+    }
+
+    const reviewForm = document.getElementById('review-form');
+    reviewForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const customerName = document.getElementById('customer-name').value;
+        const rating = document.getElementById('rating').value;
+        const reviewComment = document.getElementById('review-comment').value;
+
+        addReview(customerName, rating, reviewComment);
+
+        reviewForm.reset();
+    });
+
+
+    </script>
 </body>
 </html>

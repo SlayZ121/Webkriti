@@ -29,6 +29,7 @@ const productSchema = new mongoose.Schema({
   url: String,
   price:String,
   category:String,
+  detail:String,
 });
 const Product = mongoose.model('Product', productSchema);
 
@@ -53,7 +54,7 @@ app.get('/home', (req, res) => {
   res.sendFile(__dirname + '/hc/home.html');
 });
 
-app.get('/cart', (req, res) => {
+app.get('/cartt', (req, res) => {
   res.sendFile(__dirname + '/hc/cart.js');
 });
 

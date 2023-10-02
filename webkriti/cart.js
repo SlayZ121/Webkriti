@@ -20,6 +20,7 @@ mongoose.connect('mongodb+srv://dork_boy:the_weeknd<3@web.shju5d2.mongodb.net/ca
 
 const db = mongoose.connection;
 
+
 const cartItemSchema = new mongoose.Schema({
   name: String,
   price: String,

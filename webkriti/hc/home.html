@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
     
     <header>
         <div class="navbar">
             <a href="#home">Home</a>
-            <a href="/cart">Add to cart</a>            
-            <a href="#Favorites">Favorites</a>
+            <a href="/cart">Cart</a>            
+            <a href="#Favorites">Categories</a>
             <a href="#contact">Contact Us</a>
         </div>
        
@@ -24,34 +32,53 @@
             <div class="spinner1"></div>
         </div>
     </div>
-    <div class ="looks">
-        <img width="100%" height="500" src="https://www.cxtoday.com/wp-content/uploads/2022/03/ecommerce-3.png" alt="img bish">
-    </div>
-    <h1>Discover our wide range of products!</h1>
+    <div class="looks"><h1 class="h11">Winkel</h1></div>
+    <h1 class="top">Discover our wide range of products!</h1>
+    <p class="established">Est. 2023</p>
     <div class="featured-section" id="electronics">
-        <h2>Electronics</h2>
+        <h2 class="topp nah">Electronics</h2>
         <div class="flip-card-container" id="electronics-cards"></div>
     </div>
     <div class="featured-section" id="fashion">
-        <h2>Fashion</h2>
+        <h2 class="topp">Fashion</h2>
         <div class="flip-card-container" id="fashion-cards"></div>
     </div>
     <div class="featured-section" id="arts-crafts">
-        <h2>Arts & Crafts</h2>
+        <h2 class="topp">Arts & Crafts</h2>
         <div class="flip-card-container" id="arts-crafts-cards"></div>
     </div>
     <div class="featured-section" id="household">
-        <h2>Household</h2>
+        <h2 class="topp">Household</h2>
         <div class="flip-card-container" id="household-cards"></div>
     </div>
     <div class="featured-section" id="pet-supplies">
-        <h2>Pet Supplies</h2>
+        <h2 class="topp">Pet supplies</h2>
         <div class="flip-card-container" id="pet-supplies-cards"></div>
     </div>
-
+    <footer class="footer">
+        <div class="footer-section">
+       <div class="branch">
+        <h3 >Branches</h3>
+        <p>India</p>
+        <p> Singapore</p>
+        <p>Sweden</p>
+        <p>Ireland</p>
+       </div>
+       <div class="trade">
+        <h3 >Trade Partners</h3>
+        <p>Vinay Cheripally</p>
+        <p>Zoey</p>
+       </div>
+       <div id="contact">
+       <h3 >Contact us</h3>
+       <p>winkelco@gmail.com</p>
+       </div>
+       </div>
+       <p>&copy; 2023 Winkel. All rights reserved.</p>
+    </footer>
     <script>
        function fetchDataFromAPI(category, containerId) {
-    fetch(`/products?category=${category}`)  // Include the category in the request URL
+    fetch(`/products?category=${category}`)  
         .then((response) => response.json())
         .then((data) => {
             generateFlipCards(data, containerId);
@@ -72,12 +99,15 @@
                 const innerHTML = `
                     <div class="flip-card-inner">
                         <div class="flip-card-front" style="background-image: url('${product.url}')"></div>
-                        <div class="flip-card-back">
+                        <div class="flip-card-back" onclick="redirectToProduct(this)">
                             <p class="title product-name">${product.name}</p>
-                            <p>${product.description}</p>
+                            <p class="product-description">${product.description}</p>
                             <p class="product-price">${product.price}</p>
+                            <p class="product-detail">${product.detail}</p>
                             <div class="flip-card-button-container">
-        <button class="add-to-cart-button">Add to Cart</button>
+                                <button class="add-to-cart-button" onclick="redirectToProduct(this)">Details</button>
+
+
     </div>
                         </div>
                     </div>
@@ -105,43 +135,34 @@
             }, 900);
         });
 
-        function addToCart(productName, productPrice) {
-         
-            const productDetails = {
-                name: productName,
-                price: productPrice,
-                quantity: 1,
-            };
-
-           
-            fetch('/add-to-cart', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(productDetails),
-            })
-            .then((response) => response.text())
-            .then((message) => {
-             
-                console.log(message);
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-        }
-
+        
       
-        document.querySelectorAll('.add-to-cart-button').forEach((button) => {
-            button.addEventListener('click', function () {
-                console.log('Button clicked'); 
-                const productName = this.closest('.flip-card').querySelector('.product-name').textContent;
-                const productPrice = this.closest('.flip-card').querySelector('.product-price').textContent;
+       
 
-                addToCart(productName, productPrice);
-            });
-        });
+        function redirectToProduct(button) {
+    const flipCard = button.closest('.flip-card');
+    const productData = {
+        name: flipCard.querySelector('.product-name').textContent,
+        description: flipCard.querySelector('.product-description').textContent,
+        price: flipCard.querySelector('.product-price').textContent,
+        detail: flipCard.querySelector('.product-detail').textContent,
+    };
 
+
+    const backgroundImageStyle = flipCard.querySelector('.flip-card-front').style.backgroundImage;
+    const backgroundImageUrl = backgroundImageStyle.match(/url\(['"]?([^'"]+)['"]?\)/)[1];
+    productData.imageUrl = backgroundImageUrl;
+
+    const queryParams = new URLSearchParams(productData);
+
+    window.location.href = `product.html?${queryParams.toString()}`;
+}
+
+
+
+
+
+        
     </script>
 </body>
 </html>
