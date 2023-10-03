@@ -3,40 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="product.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
-    
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
+    
     <header>
         <div class="navbar">
             <a href="/home">Home</a>
-            <a href="/cart">Add to cart</a>            
-            <a href="/favorite">Favorites</a>
-            <a href="#contact">Contact Us</a>
+            <a href="/cartt">Cart</a>            
+            <a href="#Favorites">Categories</a>
+            <a href="#footer">Contact Us</a>
         </div>
        
     </header>
-    <div class="spinner-container">
-        <div class="spinner">
-            <div class="spinner1"></div>
-        </div>
-    </div>
-   
-   
-       
-    <script>
-        window.addEventListener('load', function () {
-            const spinnerContainer = document.querySelector('.spinner-container');
-            setTimeout(function() {
-                spinnerContainer.style.display = 'none';
-                window.scrollTo(0, 0);
-            }, 900); 
-        });
-    </script>
-    
-      
 
+   
+    <main>
+        <h1>Shopping Cart</h1>
+
+    <ul id="cart-list">
+        <!-- Cart items will be dynamically added here -->
+    </ul>
+
+    <p>Total Price: <span id="total-price">0</span></p>
+
+    <button id="place-order">Place Order</button>
+    </main>
+   
+    <footer id="footer" class="footer">
+        <div class="footer-section">
+       <div class="branch">
+        <h3 >Branches</h3>
+        <p>India</p>
+        <p> Singapore</p>
+        <p>Sweden</p>
+        <p>Ireland</p>
+       </div>
+       <div class="trade">
+        <h3 >Trade Partners</h3>
+        <p>Vinay Cheripally</p>
+        <p>Zoey</p>
+       </div>
+       <div id="contact">
+       <h3 >Contact us</h3>
+       <p>winkelco@gmail.com</p>
+       </div>
+       </div>
+       <p>&copy; 2023 Winkel. All rights reserved.</p>
+    </footer>
+    
+
+
+   
+    <script>
+     
+
+     document.addEventListener('DOMContentLoaded', () => {
+    const cartList = document.getElementById('cart-list');
+    const totalPrice = document.getElementById('total-price');
+    const placeOrderButton = document.getElementById('place-order');
+
+    // Function to fetch cart items and update the HTML
+    async function fetchCartItems() {
+        try {
+            const response = await fetch('/cart'); // Assumes you have a route for fetching cart items
+            const cartItems = await response.json();
+            
+            cartList.innerHTML = ''; // Clear the existing cart items
+
+            let total = 0;
+
+            cartItems.forEach(item => {
+                console.log(`${item.url}`);
+
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <div class="cart-item">
+                        <img src="${item.url}" alt="${item.name}" class="cart-item-image">
+                        <div class="cart-item-details">
+                            <strong>${item.name}</strong><br>
+                            Quantity: ${item.quantity}<br>
+                            Price: $${item.price * item.quantity}
+                        </div>
+                    </div>
+                `;
+                cartList.appendChild(listItem);
+
+                total += item.price * item.quantity;
+            });
+
+            totalPrice.textContent = `$${total.toFixed(2)}`;
+
+        } catch (error) {
+            console.error('Error fetching cart items:', error);
+        }
+    }
+    fetchCartItems();
+
+    placeOrderButton.addEventListener('click', () => {
+
+        alert('Order placed successfully!');
+       
+    });
+});
+
+    
+
+    </script>
 </body>
 </html>

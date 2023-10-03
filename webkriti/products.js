@@ -55,7 +55,7 @@ app.get('/home', (req, res) => {
 });
 
 app.get('/cartt', (req, res) => {
-  res.sendFile(__dirname + '/hc/cart.js');
+  res.sendFile(__dirname + '/hc/cart.html');
 });
 
 const port = process.env.PORT || 4000;

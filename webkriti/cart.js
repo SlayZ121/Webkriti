@@ -25,6 +25,7 @@ const cartItemSchema = new mongoose.Schema({
   name: String,
   price: String,
   quantity: Number,
+  url:String,
 });
 
 const Cart = mongoose.model('Cart', cartItemSchema);
@@ -34,14 +35,14 @@ app.use(express.static('hc'));
 
 app.post('/add-to-cart', async (req, res) => {
     try {
-      const { name, price, quantity } = req.body;
+      const { name, price, quantity ,url} = req.body;
       const cartItem = await Cart.findOne({ name });
   
       if (cartItem) {
         cartItem.quantity += quantity;
         await cartItem.save();
       } else {
-        const newCartItem = new Cart({ name, price, quantity });
+        const newCartItem = new Cart({ name, price, quantity ,url});
         await newCartItem.save();
       }
   
@@ -72,3 +73,6 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
+app.get('/cartt', (req, res) => {
+  res.sendFile(__dirname + '/hc/cart.html');
+});
