@@ -1,10 +1,10 @@
-/* Reset default margin and padding */
+
 body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
 }
 
-/* Set a background color and font styles */
+
 body {
     font-family: Akzidenz-Grotesk Std;
     background-image: url("https://cdn.dribbble.com/users/162444/screenshots/2275266/shot_lg.jpg");
@@ -22,7 +22,6 @@ body {
     font-size:4rem !important;
 }
 
-/* Header styles */
 .homepg-header {
     background-color: #07072D;
     color: #fff;
@@ -65,14 +64,14 @@ h3 {
     color: #B76E79;
 }
 
-/* Hero section styles */
+
 .hero {
     text-align: center;
     padding:100px 0;
     
-        margin-bottom: 0; /* Remove margin from the hero section */
+        margin-bottom: 0; 
     
-     /* Add margin to create space between hero and footer */
+     
 }
 
 .hero h1 {
@@ -95,10 +94,10 @@ h3 {
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease, color 0.3s ease;
-    margin-top: 20px; /* Add margin-top for spacing */
+    margin-top: 20px; 
 }
 
-/* Footer styles */
+
 footer {
     background-color: #000;
     color: #fff;

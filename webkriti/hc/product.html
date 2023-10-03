@@ -67,7 +67,7 @@
               <div class="star-6">
                 <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
               </div></button>
-            <button id="buy-now-button"onclick="buynow">Buy Now<div class="star-1">
+            <button id="buy-now-button"onclick="buynow(this)">Buy Now<div class="star-1">
                 <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
               </div>
               <div class="star-2">
@@ -146,7 +146,7 @@
                 <p>Good value for money, but there's room for improvement...</p>
             </div>
         </div>
-        <!-- Existing customer reviews will be appended here -->
+    
     </div>
 </div>
     </main>
@@ -255,13 +255,7 @@ function showmsg(){
 
         
 
-      function buynow(button){
-        const productName = button.closest('.product-info').querySelector('.product-name').textContent;
-            const productPrice = button.closest('.product-info').querySelector('.product-price').textContent;
-
-
-       }
-
+      
        function handleStarRating() {
         const stars = document.querySelectorAll('.star');
         const ratingInput = document.getElementById('rating');
@@ -274,16 +268,16 @@ function showmsg(){
                 stars.forEach((s) => {
                     const sRating = parseInt(s.getAttribute('data-rating'));
                     if (sRating <= rating) {
-                        s.textContent = '⭐'; // Fill the star
+                        s.textContent = '⭐'; 
                     } else {
-                        s.textContent = '☆'; // Unfill the star
+                        s.textContent = '☆'; 
                     }
                 });
             });
         });
     }
 
-    // Call the handleStarRating function to set up star rating interaction
+    
     handleStarRating();
 
     function addReview(name, rating, comment) {
@@ -318,14 +312,24 @@ function showmsg(){
 
         reviewForm.reset();
     });
-    function buynow() {
+    async function buynow() {
+
+        const response = await fetch('http://localhost:5000/get-api-key');
+    const data = await response.json();
+
+    const stripeApiKey = data.apiKey;
+    const stripe = Stripe(stripeApiKey);
+
+
 
         const productName = document.getElementById('product-name').textContent;
 
-  fetch('/create-checkout-session', {
+  fetch('http://localhost:5000/create-checkout-session', {
     method: 'POST',
     headers: {
+        'Authorization': `Bearer ${stripeApiKey}`,
       'Content-Type': 'application/json'
+     
     },
     body: JSON.stringify({
       items: [
@@ -347,5 +351,7 @@ function showmsg(){
 
 
     </script>
+    <script src="https://js.stripe.com/v3/"></script>
+
 </body>
 </html>

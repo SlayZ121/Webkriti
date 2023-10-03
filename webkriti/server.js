@@ -1,11 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY);
 
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+const corsOptions = {
+    origin: '*',
+  };
+  
+  app.use(cors(corsOptions));
 require('dotenv').config();
 const mongoDBUrl = process.env.MONGODB_URL_PRODUCTS;
 
@@ -19,7 +24,7 @@ mongoose.connect(mongoDBUrl, {
 });
 const db = mongoose.connection;
 
-// Define the Product model
+
 const productSchema = new mongoose.Schema({
   name: String,
   description: String,
@@ -40,7 +45,7 @@ app.post('/create-checkout-session', async (req, res) => {
         payment_method_types: ['card'],
         mode: 'payment',
         line_items: await Promise.all(req.body.items.map(async (item) => {
-          // Fetch product data from the database based on the product name
+         
           const storeItem = await Product.findOne({ name: item.id });
   const price= (parseFloat(storeItem.price.replace('$', '')))*100;
           return {
@@ -54,8 +59,8 @@ app.post('/create-checkout-session', async (req, res) => {
             quantity: item.quantity,
           };
         })),
-        success_url: `localhost:3000/success.html`,
-        cancel_url: `localhost:3000/cancel.html`,
+        success_url: `http://localhost:3000/success.html`,
+        cancel_url: `http://localhost:3000/cancel.html`,
       });
   
       res.json({ url: session.url });
@@ -63,4 +68,7 @@ app.post('/create-checkout-session', async (req, res) => {
       res.status(500).json({ error: e.message });
     }
   });
-  
+  app.get('/get-api-key', (req, res) => {
+    const stripeApiKey = process.env.STRIPE_PRIVATE_KEY;
+    res.json({ apiKey: stripeApiKey });
+  });

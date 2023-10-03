@@ -21,7 +21,7 @@ body {
   flex-direction: column;
 }
 main {
-  flex-grow: 1; /* This allows the main content to grow and push the footer to the bottom */
+  flex-grow: 1; 
 }
 
 
@@ -65,7 +65,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin: 0 20px; /* Add margin to the left and right sides */
+  margin: 0 20px; 
   }
   
   .branch,
@@ -73,7 +73,7 @@ body {
   #contact {
   display: inline-block;
   text-align: left;
-  padding: 0 10px; /* Reduce padding between div elements */
+  padding: 0 10px; 
   }
 
   .cart-item {
@@ -324,7 +324,7 @@ hr{
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  padding-top:3rem; /* Adjust margin as needed */
+  padding-top:3rem; 
 }
 .item-name,.price,.quantity{
   font-size:1.5rem;
@@ -335,8 +335,8 @@ hr{
 .price,
 .quantity {
   font-size: 1.2rem;
-  margin: 0; /* Remove any default margin */
-  padding: 0.2rem; /* Adjust padding as needed */
+  margin: 0; 
+  padding: 0.2rem; 
 }
 .remove-button{
   position: relative;
