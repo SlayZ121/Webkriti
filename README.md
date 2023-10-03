@@ -4,6 +4,7 @@ An E-commerce website with a pre-sign up page followed by sign-in and sign-up pa
 ![image](https://github.com/SlayZ121/Webkriti/assets/134158358/9e1b3b10-c7b0-4585-88ce-b76b4557d53c)
 ![image](https://github.com/SlayZ121/Webkriti/assets/134158358/ac7abeb8-1c40-42d4-921e-c8a7e4f5f69e)
 
+![image](https://github.com/SlayZ121/Webkriti/assets/134158358/0fc57149-2fae-4acc-9eae-07c0da7be58a)
 
 ![image](https://github.com/SlayZ121/Webkriti/assets/134158358/140ad489-ca36-43cc-a8d7-9dbb6d67f56a)
 
