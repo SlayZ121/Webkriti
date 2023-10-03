@@ -11,10 +11,13 @@ An E-commerce website with a pre-sign up page followed by sign-in and sign-up pa
 
 ![image](https://github.com/SlayZ121/Webkriti/assets/134158358/140ad489-ca36-43cc-a8d7-9dbb6d67f56a)
 ![image](https://github.com/SlayZ121/Webkriti/assets/134158358/0e9bf655-6c39-4f15-8453-df5677ab3e6b)
-![image](https://github.com/SlayZ121/Webkriti/assets/134158358/cc604b68-c436-4089-a45d-1d3bcccd51c1)
-![image](https://github.com/SlayZ121/Webkriti/assets/134158358/b4a20a84-dc30-4746-a2d8-58b214799abf)
-![image](https://github.com/SlayZ121/Webkriti/assets/134158358/664f6e23-17c0-4769-bbb8-9b9d72e54bf1)
-![image](https://github.com/SlayZ121/Webkriti/assets/134158358/e3de72ba-2841-4025-b368-fc6b4252d525)
+![image](https://github.com/SlayZ121/Webkriti/assets/134158358/b840cf6d-c02a-463f-92ae-7da2adb3c5b0)
+![image](https://github.com/SlayZ121/Webkriti/assets/134158358/b30a442f-5996-42a7-8121-fdccd380b743)
+
+![image](https://github.com/SlayZ121/Webkriti/assets/134158358/5f8392a8-c924-4be0-854d-94eaac40cb4c)
+
+![image](https://github.com/SlayZ121/Webkriti/assets/134158358/b341c72e-22c9-43b6-bb2b-6f6b1e61996f)
+
 
 
 ![image](https://github.com/SlayZ121/Webkriti/assets/134158358/27171e6f-899a-40ba-82c8-b3b6ab3e1971)
