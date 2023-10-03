@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
@@ -30,15 +30,36 @@
 
    
     <main>
-        <h1>Shopping Cart</h1>
+        <div class="hhh">
+        <h1 class="hh">Shopping Cart</h1>
+        </div>
 
     <ul id="cart-list">
-        <!-- Cart items will be dynamically added here -->
+        
     </ul>
+<hr style="margin-left:3rem">
+    <p class="total">Total Price: <span id="total-price">0</span></p>
 
-    <p>Total Price: <span id="total-price">0</span></p>
-
-    <button id="place-order">Place Order</button>
+    <div class="center-button-container">
+    <button class="order"id="place-order">Place Order<div class="star-1">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+      </div>
+      <div class="star-2">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+      </div>
+      <div class="star-3">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+      </div>
+      <div class="star-4">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+      </div>
+      <div class="star-5">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+      </div>
+      <div class="star-6">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+      </div></button>
+      </div>
     </main>
    
     <footer id="footer" class="footer">
@@ -67,58 +88,106 @@
 
    
     <script>
-     
+         const cartList = document.getElementById('cart-list');
+  const totalPrice = document.getElementById('total-price');
+  const placeOrderButton = document.getElementById('place-order');
 
      document.addEventListener('DOMContentLoaded', () => {
-    const cartList = document.getElementById('cart-list');
-    const totalPrice = document.getElementById('total-price');
-    const placeOrderButton = document.getElementById('place-order');
-
-    // Function to fetch cart items and update the HTML
-    async function fetchCartItems() {
-        try {
-            const response = await fetch('/cart'); // Assumes you have a route for fetching cart items
-            const cartItems = await response.json();
-            
-            cartList.innerHTML = ''; // Clear the existing cart items
-
-            let total = 0;
-
-            cartItems.forEach(item => {
-                console.log(`${item.url}`);
-
-                const listItem = document.createElement('li');
-                listItem.innerHTML = `
-                    <div class="cart-item">
-                        <img src="${item.url}" alt="${item.name}" class="cart-item-image">
-                        <div class="cart-item-details">
-                            <strong>${item.name}</strong><br>
-                            Quantity: ${item.quantity}<br>
-                            Price: $${item.price * item.quantity}
-                        </div>
-                    </div>
-                `;
-                cartList.appendChild(listItem);
-
-                total += item.price * item.quantity;
-            });
-
-            totalPrice.textContent = `$${total.toFixed(2)}`;
-
-        } catch (error) {
-            console.error('Error fetching cart items:', error);
-        }
-    }
     fetchCartItems();
 
     placeOrderButton.addEventListener('click', () => {
-
-        alert('Order placed successfully!');
-       
+      alert('Order placed successfully!');
     });
-});
+  });
+
+
+
+  
+    async function fetchCartItems() {
+        try {
+            const response = await fetch('/cart'); 
+            const cartItems = await response.json();
+            
+            cartList.innerHTML = ''; 
+
+            let total = 0;
+
+            cartItems.forEach((item, index )=> {
+                
+                const priceWithoutDollar = parseFloat(item.price.replace('$', ''));
+                const cartItemDiv = document.createElement('div');
+                        
+                        cartItemDiv.innerHTML = `
+                        <div class="cart-item">
+                        <div class="first">
+                <img src="${item.url}" alt="${item.name}" style="height:200px; width:200px " class="cart-item-image">
+               <b> <p class="item-name">${item.name}</p></b>
+            </div>
+            <div class="cart-item-details" >
+        
+            <p class="quantity"><b>Quantity:</b> ${item.quantity}</p>
+        </div>
+        <div class="cart-item-price">
+            <p class="price"><b>Price:</b> $${priceWithoutDollar * item.quantity}</p>
+
+        </div>
+        <button onclick="rembutton(this)"class="remove-button" data-name="${item.name}"><span class="button-content">Remove </span></button>
+        </div>
+        
+                        `;
+                        
+                        if (index < cartItems.length - 1) {
+                const hrElement = document.createElement('hr');
+                cartItemDiv.appendChild(hrElement);
+            }
+
+            cartList.appendChild(cartItemDiv);
+
+                        total += priceWithoutDollar * item.quantity;
+                    });
+
+                    totalPrice.textContent = `$${total.toFixed(2)}`;
+
+                } catch (error) {
+                    console.error('Error fetching cart items:', error);
+                }
+            }
+            fetchCartItems();
+
+            placeOrderButton.addEventListener('click', () => {
+                alert('Order placed successfully!');
+            });
+        
+
 
     
+
+       
+window.rembutton=async function(button){
+    const productName = button.getAttribute('data-name');
+    
+    try {
+      const response = await fetch('/remove-from-cart', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name: productName }),
+      });
+
+      if (response.ok) {
+        
+        button.closest('.cart-item').remove();
+        
+        
+        fetchCartItems();
+      } else {
+        console.error('Error removing product from cart:', response.status);
+      }
+    } catch (error) {
+      console.error('Error removing product from cart:', error);
+    }
+  }
 
     </script>
 </body>

@@ -2,9 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
+require('dotenv').config();
 
-mongoose.connect('mongodb+srv://dork_boy:the_weeknd<3@web.shju5d2.mongodb.net/newapp', {
+app.use(bodyParser.urlencoded({ extended: true }));
+const mongoDBUrl =process.env.MONGODB_URL_APP
+mongoose.connect(mongoDBUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {
@@ -56,7 +58,7 @@ app.post('/login', async (req, res) => {
   } else {
     res.redirect('/login?error=' + encodeURIComponent('Invalid email or password. Please try again.'));
   }
-});
+}); 
 
 const port = 3000;
 app.listen(port, () => {

@@ -10,9 +10,9 @@ const app = express();
 app.use(express.json());
 
 app.use(cors());
-
-
-mongoose.connect('mongodb+srv://dork_boy:the_weeknd<3@web.shju5d2.mongodb.net/products?retryWrites=true&w=majority', {
+require('dotenv').config();
+const mongoDBUrl =process.env.MONGODB_URL_PRODUCTS
+mongoose.connect(mongoDBUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {
@@ -45,7 +45,7 @@ app.get('/products', async (req, res) => {
   } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Internal Server Error' });
-  }
+  } 
 });
 
 

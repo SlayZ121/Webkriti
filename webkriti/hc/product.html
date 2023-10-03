@@ -186,9 +186,9 @@
     const productName = button.closest('.product-info').querySelector('.product-name').textContent;
             const productPrice = button.closest('.product-info').querySelector('.product-price').textContent;
 
-            
+            console.log(productName,productPrice);
    
-            const productImg = querySelector('.productimg').src;
+            const productImg = document.querySelector('.productimg').src;
     if (!productImg) {
         console.error("Product image element not found");
         return;

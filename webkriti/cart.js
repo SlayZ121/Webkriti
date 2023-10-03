@@ -8,8 +8,10 @@ const port = 3000;
 
 
 app.use(cors());
+require('dotenv').config();
+const mongoDBUrl =process.env.MONGODB_URL_CART
 
-mongoose.connect('mongodb+srv://dork_boy:the_weeknd<3@web.shju5d2.mongodb.net/carttt?retryWrites=true&w=majority', {
+mongoose.connect(mongoDBUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {
@@ -76,3 +78,32 @@ app.listen(port, () => {
 app.get('/cartt', (req, res) => {
   res.sendFile(__dirname + '/hc/cart.html');
 });
+
+app.post('/remove-from-cart', async (req, res) => {
+  try {
+    const { name } = req.body;
+
+    // Find the cart item by name
+    const cartItem = await Cart.findOne({ name });
+
+    if (!cartItem) {
+      res.status(404).send('Product not found in cart');
+      return;
+    }
+
+    if (cartItem.quantity > 1) {
+      // If quantity > 1, decrement the quantity
+      cartItem.quantity -= 1;
+      await cartItem.save();
+    } else {
+      // If quantity is 1, remove the item from the cart
+      await Cart.deleteOne({ name: cartItem.name }); // Remove from the database
+    }
+
+    res.send('Product removed from cart');
+  } catch (error) {
+    console.error('Error in /remove-from-cart:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+ 

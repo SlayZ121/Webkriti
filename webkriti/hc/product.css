@@ -86,9 +86,10 @@ body {
 
 .product-image {
   padding-left:3rem!important;
-  width: 50%!important;
+  width: 500px!important;
   padding:0;
-  max-height:50%!important;
+  max-height:500px!important;
+  padding-right:4rem;
 
    /* Adjust this width as needed */
 }
