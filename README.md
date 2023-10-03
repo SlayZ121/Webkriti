@@ -1,9 +1,10 @@
 # Winkel
 An E-commerce website with a pre-sign up page followed by sign-in and sign-up page if u dont have an account. After signing in or signing up, redirected to home page, where we have the featured products. If you hover over the product's card, it'll flip to reveal the product name, a short description and a "details" button. Upon clickin on details button, you will be redirected to a product detail page where you can read more about the product and you will see buy now and add to cart button. Below there will be a customer review section, where you can read others' reviews and write your own as well. If you click on cart in the navbar, it will lead you to your cart page where you can see the items in your cart theri quantity and price and a remove button followed up by total price below and a Place order button. The buy now and place order button will lead you to a stripe gateway where the payment is processed safely. Duly note that I have used only dummy private stripe key here for demonstration purposes as using actual one might not be safe. We use databases tos tore cart items, user email id and password, and the products and their details. 
 #Screenshots
+![image](https://github.com/SlayZ121/Webkriti/assets/134158358/9e1b3b10-c7b0-4585-88ce-b76b4557d53c)
 ![image](https://github.com/SlayZ121/Webkriti/assets/134158358/ac7abeb8-1c40-42d4-921e-c8a7e4f5f69e)
 
-![image](https://github.com/SlayZ121/Webkriti/assets/134158358/9e1b3b10-c7b0-4585-88ce-b76b4557d53c)
+
 ![image](https://github.com/SlayZ121/Webkriti/assets/134158358/140ad489-ca36-43cc-a8d7-9dbb6d67f56a)
 
 ![image](https://github.com/SlayZ121/Webkriti/assets/134158358/0e9bf655-6c39-4f15-8453-df5677ab3e6b)
