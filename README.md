@@ -1,5 +1,8 @@
 # Winkel
 An E-commerce website with a pre-sign up page followed by sign-in and sign-up page if u dont have an account. After signing in or signing up, redirected to home page, where we have the featured products. If you hover over the product's card, it'll flip to reveal the product name, a short description and a "details" button. Upon clickin on details button, you will be redirected to a product detail page where you can read more about the product and you will see buy now and add to cart button. Below there will be a customer review section, where you can read others' reviews and write your own as well. If you click on cart in the navbar, it will lead you to your cart page where you can see the items in your cart theri quantity and price and a remove button followed up by total price below and a Place order button. The buy now and place order button will lead you to a stripe gateway where the payment is processed safely. Duly note that I have used only dummy private stripe key here for demonstration purposes as using actual one might not be safe. We use databases tos tore cart items, user email id and password, and the products and their details. 
+[NOTE: In few screenshots my navbar looks like not aligned at top thats jus the chrome search bar above..which is visible in other screenshots. kindly DO not think that my navbar is not aligned properly. ]
+
+
 #Screenshots
 ![image](https://github.com/SlayZ121/Webkriti/assets/134158358/9e1b3b10-c7b0-4585-88ce-b76b4557d53c)
 ![image](https://github.com/SlayZ121/Webkriti/assets/134158358/ac7abeb8-1c40-42d4-921e-c8a7e4f5f69e)
@@ -23,7 +26,10 @@ An E-commerce website with a pre-sign up page followed by sign-in and sign-up pa
 ![image](https://github.com/SlayZ121/Webkriti/assets/134158358/4adafe39-619a-4165-9245-dc362fdb5eac)
 ![image](https://github.com/SlayZ121/Webkriti/assets/134158358/1fb33483-4ab6-4a55-83ae-c9c914ac9aa9)
 
+
 #Features-implemented
+
+
 #frontend
 1.Pre-sign up page that prompts you to sign in/sign up
 2.Sign-in and sign-up page.
@@ -35,6 +41,8 @@ An E-commerce website with a pre-sign up page followed by sign-in and sign-up pa
 8.Cart page dynamically loads cart items and displays them using Javascript
 9. Remove button for each item in cart, dynamically removing it and updating price accordingly. 
 10. A footer on all pages except the pre-signup and sign-in pages.
+
+
  
 #backend
 1.Fetching data from user database to see if the user exists for sign in
@@ -49,13 +57,17 @@ An E-commerce website with a pre-sign up page followed by sign-in and sign-up pa
 10. Fetching items from cart database to give it to cart page. 
 Mongodb used to set up database.
 
+
 #Packages?technologies used
 HTML CSS JS express.js node.js mongoDB
 env package to safeguard the connection strings and stripe private key
 related npm packages are used including "stripe". Check node modules to know more.
 
+
+
 #Local setup
 Clone github repo into ur VScode and run the node files in the terminal. Access pages using backend routes. 
+
 
 #Team members
 
